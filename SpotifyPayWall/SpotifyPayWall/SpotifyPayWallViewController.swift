@@ -23,6 +23,7 @@ class SpotifyPayWallViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.alwaysBounceVertical = false
         // Presentation
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCollectionViewCell", for: indexPath) as? BannerCollectionViewCell else {
@@ -53,7 +54,7 @@ class SpotifyPayWallViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(200))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 15
