@@ -8,10 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Paywall View Controller-->
+        <!--Spotify Pay Wall View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PaywallViewController" id="BYZ-38-t0r" customClass="PaywallViewController" customModule="SpotifyPaywall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SpotifyPayWallViewController" customModule="SpotifyPayWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <string key="storyboardIdentifier" base64-UTF8="YES">
+U3BvdGlmeVBheVdhbGxWaWV3Q29udHJvbGxlcgM
+</string>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +38,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCell" id="9No-st-XI7" customClass="BannerCell" customModule="SpotifyPaywall" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCollectionViewCell" id="9No-st-XI7" customClass="BannerCollectionViewCell" customModule="SpotifyPayWall" customModuleProvider="target">
                                         <rect key="frame" x="27.5" y="0.0" width="359" height="181"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QGG-Aa-ESB">
@@ -75,9 +78,9 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="359" height="181"/>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="37M-WA-cCe" id="RSj-xN-KOg"/>
-                                            <outlet property="thumbnailImageView" destination="e4a-FB-s36" id="ftp-Vd-LPg"/>
-                                            <outlet property="titleLabel" destination="fPK-b6-ho7" id="IEJ-9M-Xos"/>
+                                            <outlet property="descriptionLabel" destination="37M-WA-cCe" id="7rP-YQ-AYE"/>
+                                            <outlet property="thumbnailImageView" destination="e4a-FB-s36" id="e5l-TQ-pcn"/>
+                                            <outlet property="titleLabel" destination="fPK-b6-ho7" id="FyJ-OB-uUK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,7 +130,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Ji3-0W-stR" id="2oR-IT-WoM"/>
-                        <outlet property="pageControl" destination="Rn8-Hr-OP3" id="o6Q-EH-qpo"/>
+                        <outlet property="pageControl" destination="Rn8-Hr-OP3" id="B9d-zY-DRA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
