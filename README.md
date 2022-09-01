@@ -19,5 +19,47 @@
 ```swift
 collectionView.alwaysBounceVertical = false
 ```
-- alwaysBounceVertical 프로퍼티는 세로 스크롤이 콘텐츠뷰의 끝에 도달할 때 튀어 오르기가 항상 발생하는지를 결정하는 부울 값이다.
+- alwaysBounceVertical 프로퍼티는 세로 스크롤이 콘텐츠뷰의 끝에 도달할 때 튀어 오르기가 항상 발생하는지를 결정하는 Bool 값이다.
 
+## 🍎 Page Control 페이지 설정
+- numberOfPages: Int
+    - page의 총 갯수를 결정하는 UIPageControl의 프로퍼티
+
+```swift
+pageControl.numberOfPages = info.count
+```
+![](https://i.imgur.com/JIWzxmP.png)
+
+- currentPage: Int
+    - 현재 page를 설정하는 UIPageControl의 프로퍼티
+```swift
+pageControl.currentPage = index
+```
+
+
+## 🍎 visibleItemsInvalidationHandler 역할
+- 업데이트 예정
+```swift
+private func layout() -> UICollectionViewCompositionalLayout {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(200))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        section.visibleItemsInvalidationHandler = { (item, offset, env) in
+            let index = Int((offset.x / env.container.contentSize.width).rounded(.up))
+            print(">>>> \(index)")
+            self.pageControl.currentPage = index
+        }
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+```
