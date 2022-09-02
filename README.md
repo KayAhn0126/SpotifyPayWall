@@ -1,4 +1,4 @@
-# SpotifyPayWall
+# 9. SpotifyPayWall
 
 ## 🍎 작동 화면
 
@@ -37,8 +37,9 @@ pageControl.currentPage = index
 ```
 
 
-## 🍎 visibleItemsInvalidationHandler 역할
-- 업데이트 예정
+## 🍎 visibleItemsInvalidationHandler프로퍼티 역할
+
+- 현재 보여지고 있는 화면의 정보를 item, offset, env 파라미터로 알수있게 해줌.
 ```swift
 private func layout() -> UICollectionViewCompositionalLayout {
         
